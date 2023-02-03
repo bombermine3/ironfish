@@ -16,6 +16,7 @@ case "$1" in
 install)
 	cd $HOME	
 
+	touch $HOME/.bash_profile
 	source $HOME/.bash_profile
 
 	if [ ! $IRONFISH_NODE_NAME ]; then
