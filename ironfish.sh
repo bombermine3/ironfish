@@ -4,7 +4,7 @@ curl -s https://raw.githubusercontent.com/bombermine3/cryptohamster/main/logo.sh
 
 if [ $# -ne 1 ]; then 
 	echo "Использование:"
-	echo "gear.sh <command>"
+	echo "ironfish.sh <command>"
 	echo "	install   Установка ноды"
 	echo "	uninstall Удаление"
 	echo "	update    Обновление"
