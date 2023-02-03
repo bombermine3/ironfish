@@ -72,7 +72,13 @@ WantedBy=multi-user.target" > /etc/systemd/system/ironfish-miner.service
 
 	systemctl daemon-reload
 	systemctl enable ironfish-node ironfish-miner
+
+	ironfish chain:download --confirm
+	ironfish config:set enableTelemetry true
+
 	systemctl start ironfish-node ironfish-miner
+
+	sleep 2
 
 	echo "Установка завершена"
 	echo "Проверка логов:"
