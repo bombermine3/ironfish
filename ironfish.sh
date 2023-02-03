@@ -82,6 +82,8 @@ WantedBy=multi-user.target" > /etc/systemd/system/ironfish-miner.service
 	ironfish config:set enableTelemetry true
 	systemctl restart ironfish-node ironfish-miner
 
+	echo -e "\n" | ironfish faucet > /dev/null 2>&1
+
 	echo "Установка завершена"
 	echo "Проверка логов:"
 	echo "   journalctl -u ironfish-node -f -o cat"
