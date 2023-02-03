@@ -30,8 +30,9 @@ install)
 	source $HOME/.bash_profile
   
 	apt update
+	apt -y install curl
 	curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-	apt update && apt -y upgrade && apt -y install curl nodejs npm
+	apt update && apt -y upgrade && apt -y install nodejs
 	source $HOME/.bash_profile
 
 	npm install -g ironfish
