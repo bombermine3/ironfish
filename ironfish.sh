@@ -105,6 +105,7 @@ update)
 	cp -r $HOME/.ironfish/databases/wallet $HOME/ironfish_backup/wallet_$(date +%s)
 	
 	npm install -g ironfish
+	ironfish migrations:start
 
 	sytemctl restart ironfish-node ironfish-miner
 
