@@ -98,7 +98,7 @@ uninstall)
 	echo "Удаление завершено"
     ;;
 update)
-	sytemctl stop ironfish-node ironfish-miner
+	systemctl stop ironfish-node ironfish-miner
 	cd $HOME
 
 	mkdir -p ironfish_backup
@@ -107,7 +107,7 @@ update)
 	npm install -g ironfish
 	ironfish migrations:start
 
-	sytemctl restart ironfish-node ironfish-miner
+	systemctl restart ironfish-node ironfish-miner
 
 	echo "Обновление завершено"
 	;;
