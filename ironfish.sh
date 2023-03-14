@@ -37,7 +37,7 @@ install)
 	apt -y install build-essential nodejs
 	source $HOME/.bash_profile
 
-	npm install -g ironfish
+	npm install -g ironfish@0.1.70
 
 	printf "[Unit]
 Description=IronFish Node
@@ -100,11 +100,13 @@ uninstall)
 update)
 	systemctl stop ironfish-node ironfish-miner
 	cd $HOME
+	source $HOME/.bash_profile
+	source $HOME/.cargo/env
 
 	mkdir -p ironfish_backup
 	cp -r $HOME/.ironfish/databases/wallet $HOME/ironfish_backup/wallet_$(date +%s)
 	
-	npm install -g ironfish
+	npm install -g ironfish@0.1.70
 	ironfish migrations:start
 
 	systemctl restart ironfish-node ironfish-miner
