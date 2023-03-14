@@ -71,16 +71,19 @@ WantedBy=multi-user.target" > /etc/systemd/system/ironfish-miner.service
 	}" > $HOME/.ironfish/config.json
 
 	systemctl daemon-reload
-	systemctl enable ironfish-node ironfish-miner
-	systemctl start ironfish-node ironfish-miner
+	systemctl enable ironfish-node 
+#ironfish-miner
+	systemctl start ironfish-node
+#ironfish-miner
 
 	sleep 5
 
 	systemctl stop ironfish-node ironfish-miner
 	sleep 2
-	ironfish chain:download --confirm
+	#ironfish chain:download --confirm
 	ironfish config:set enableTelemetry true
-	systemctl restart ironfish-node ironfish-miner
+	systemctl restart ironfish-node
+#ironfish-miner
 
 	echo -e "\n" | ironfish faucet > /dev/null 2>&1
 
